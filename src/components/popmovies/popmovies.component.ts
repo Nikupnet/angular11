@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {PopMoviesResponse} from '../../models/PopMovies';
+import {MoviesResponse} from '../../models/Movies';
 import {PopMoviesService} from '../../services/popmovies/popmovies.service';
 
 @Component({
@@ -9,16 +9,16 @@ import {PopMoviesService} from '../../services/popmovies/popmovies.service';
 })
 export class PopmoviesComponent implements OnInit {
 
-  constructor(private moviesService: PopMoviesService) {
+  constructor(private popMoviesService: PopMoviesService) {
    }
-   popMoviesResponse: PopMoviesResponse;
+   moviesResponse: MoviesResponse;
    posterpath = "https://image.tmdb.org/t/p/w500/";
    
 
 
   ngOnInit(): void {
-    this.moviesService.getPopMovies()
-    .subscribe((data: PopMoviesResponse) => this.popMoviesResponse = { ...data});
+    this.popMoviesService.getPopMovies()
+    .subscribe((data: MoviesResponse) => this.moviesResponse = { ...data});
   }
 
 }

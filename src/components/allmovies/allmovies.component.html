@@ -1,8 +1,16 @@
 <div class="app-component">
-    <div class="component-header">
-      <h3>Movies</h3>
+  <div class="component-header">
+    <h3>Movies</h3>
+  </div>
+
+  <div style="margin-top: 20px" *ngIf="moviesResponse">
+    {{moviesResponse.results.push()}}
+    {{moviesResponse.total_results}}
+    <div class="row">
+
+      <div *ngFor="let movie of moviesResponse.results; let i = index" class="col-sm-3 mb-4">
+        <app-displaymovie [movie]="movie"></app-displaymovie>
+      </div>
     </div>
-
-
-    <app-displaymovie [moviesResponse]="moviesResponse"></app-displaymovie>
- </div>
+  </div>
+</div>

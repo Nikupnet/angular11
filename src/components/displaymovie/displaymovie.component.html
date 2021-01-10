@@ -1,30 +1,13 @@
-<div class="app-component">
-
-    <div style="margin-top: 20px" *ngIf="moviesResponse">
-      {{moviesResponse.results.push()}}
-      {{moviesResponse.total_results}}
-      <div class="row">
-
-        <div *ngFor="let movie of moviesResponse.results; let i = index" class="col-sm-3 mb-4">    
-          <div class="card">
-            <img [src]="posterpath + movie.poster_path" class="card-img-top" >
-            <div class="card-body">
-              <h5 class="card-title">{{movie.title}}</h5>
-              <p class="card-text"><i>{{movie.release_date | date :'dd. MMM yyyy'}}</i></p>
-              <p><button class="btn btn-primary" (click)="changeButton()">{{ displayButton }}</button></p>
-              <h5 class="card-title" (click)="goMovieDetail(movie.id)">Was</h5>
-
-              <a href="#" class="btn btn-primary">Favoriten</a>
-            </div>
-          </div>
-
-
-          <div class="col-md-6" *ngIf="display">
-            <app-moviedetail></app-moviedetail>
-        </div>
-        </div>
-        
-      </div>
-    </div>
-
- </div>
+<div class="card">
+  <img [src]="posterpath + movie.poster_path" class="card-img-top" >
+  <div class="card-body">
+    <h5 class="card-title">{{movie.title}}</h5>
+    <p class="card-text"><i>{{movie.release_date | date :'dd. MMM yyyy'}}</i></p>
+    <p><button class="btn btn-primary" (click)="changeButton()">{{ displayButton }}</button></p>
+    <p><button class="btn btn-primary" (click)="goMovieDetail(movie.id)">{{ detailButton }}</button></p>
+    <p><button (click) ="addToFavorites()" class="btn btn-primary">{{ isFavorite ? 'Remove from favorite' : 'Add to favorite' }}</button></p>
+  </div>
+</div>
+<div class="col-md-6" *ngIf="display">
+  <app-moviedetail></app-moviedetail>
+</div>

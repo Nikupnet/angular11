@@ -6,7 +6,7 @@ import {MovieResponse} from '../../models/Movie';
 
 
 const baseURL1 = 'https://api.themoviedb.org/3/movie/';
-const baseURL2 = '?api_key=cc93ac48875a099105b9238502f49a3a&language=en-US';
+const baseURL2 = '?api_key=cc93ac48875a099105b9238502f49a3a&language=de-CH';
 const baseURL3 = '550';
 
 
