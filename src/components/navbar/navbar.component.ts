@@ -14,8 +14,8 @@ export class NavbarComponent implements OnInit {
   gotoSearch(value: string): void {
     console.log("Click, ", value);
     this.router.navigate(['/searchmovies-component'], { queryParams: { searchquery: value } },);
-   } 
-  
+  }
+
   ngOnInit(): void {
   }
 
