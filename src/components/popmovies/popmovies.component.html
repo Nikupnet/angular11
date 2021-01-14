@@ -5,10 +5,14 @@
       <h3>Populäre Filme</h3>
     </div>
 
-    <div class="row">
+    <div *ngIf="moviesResponse" class="row">
       <div *ngFor="let movie of moviesResponse.results; let i = index" class="col-lg-3 mb-4">
         <app-displaymovie [movie]="movie"></app-displaymovie>
       </div>
+    </div>
+
+    <div class="row">
+      <button (click)="goToNextPage()" class="btn nextButton"> Nächste Seite</button>
     </div>
 
   </div>

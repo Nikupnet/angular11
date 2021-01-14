@@ -4,15 +4,15 @@
       <h3>Beste Filme</h3>
     </div>
 
-    <div style="margin-top: 20px" *ngIf="moviesResponse">
-      {{moviesResponse.results.push()}}
-      {{moviesResponse.total_results}}
-      <div class="row">
-        <div *ngFor="let movie of moviesResponse.results; let i = index" class="col-lg-3 mb-4">
-          <app-displaymovie [movie]="movie"></app-displaymovie>
-        </div>
+    <div *ngIf="moviesResponse" class="row">
+      <div *ngFor="let movie of moviesResponse.results; let i = index" class="col-lg-3 mb-4">
+        <app-displaymovie [movie]="movie"></app-displaymovie>
       </div>
     </div>
-    
+
+    <div class="row">
+      <button (click)="goToNextPage()" class="btn nextButton"> Nächste Seite</button>
+    </div>
+
   </div>
 </div>

@@ -5,12 +5,18 @@
       <h3>Movies</h3>
     </div>
 
-    <div class="row">
+    <div *ngIf="moviesResponse" class="row">
       <div *ngFor="let movie of moviesResponse.results; let i = index" class="col-lg-3 mb-4">
         <app-displaymovie [movie]="movie"></app-displaymovie>
       </div>
     </div>
-    <button (click)="goToNextPage()"> Nächste seite</button>
+    
+    <div class="row ">
+      <div class=" float-end">
+
+      <button (click)="goToNextPage()" class="btn nextButton ml-3 float-end"> Nächste Seite</button>
+    </div>
   </div>
 
+  </div>
 </div>

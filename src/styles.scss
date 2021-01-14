@@ -46,3 +46,14 @@ h5 {
     }
 }
 
+.nextButton {
+    background-color: $dark;
+    color: $gelb;
+    border-radius: 0;
+    margin-bottom: 4em;
+
+    :hover > & {
+        color: $gelb;
+        border: $gelb 2px solid;
+    }
+}

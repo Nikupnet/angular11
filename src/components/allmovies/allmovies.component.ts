@@ -17,11 +17,10 @@ export class AllmoviesComponent implements OnInit {
 
   moviesResponse: MoviesResponse;
   query = "top_rated";
-  page = 2;
+  page = 1;
 
 
   ngOnInit(): void {
-    this.page = 1;
     this.activatedRoute.queryParams.subscribe(params => {
       if ("genreid" in params) {
         const genreid = params['genreid'];
@@ -36,6 +35,7 @@ export class AllmoviesComponent implements OnInit {
 
   goToNextPage(): void {
     this.page++;
+
     console.log(this.page);
     this.activatedRoute.queryParams.subscribe(params => {
       if ("genreid" in params) {
@@ -46,6 +46,7 @@ export class AllmoviesComponent implements OnInit {
         this.moviesService.getMovies(this.query = this.query, this.page = this.page)
           .subscribe((data: MoviesResponse) => this.moviesResponse = { ...data });
       }
+      window.scroll(0, 0);
     })
   }
 
