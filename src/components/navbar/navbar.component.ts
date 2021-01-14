@@ -11,12 +11,11 @@ export class NavbarComponent implements OnInit {
   constructor(private router: Router) { }
 
   value = ''
-
   gotoSearch(value: string): void {
     console.log("Click, ", value);
-    this.router.navigate(['/searchmovies-component'], { queryParams: { searchquery: value } });
-  }
-
+    this.router.navigate(['/searchmovies-component'], { queryParams: { searchquery: value } },);
+   } 
+  
   ngOnInit(): void {
   }
 

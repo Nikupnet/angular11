@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http'; 
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './components/app/app.component';
 import { AllmoviesComponent } from './components/allmovies/allmovies.component';
@@ -35,6 +36,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

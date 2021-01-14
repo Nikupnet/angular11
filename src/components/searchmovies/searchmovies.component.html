@@ -5,13 +5,11 @@
       <h3>Ergebnisse</h3>
     </div>
 
-    <div style="margin-top: 20px" *ngIf="searchMoviesResponse">
       <div class="row">
         <div *ngFor="let movie of searchMoviesResponse.results; let i = index" class="col-lg-3 mb-4">
           <app-displaymovie [movie]="movie"></app-displaymovie>
         </div>
       </div>
-    </div>
     
   </div>
 </div>
