@@ -1,4 +1,4 @@
-import {  ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MoviedetailComponent } from './moviedetail.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
@@ -7,15 +7,15 @@ describe('MoviedetailComponent', () => {
   let component: MoviedetailComponent;
   let fixture: ComponentFixture<MoviedetailComponent>;
 
-  beforeEach(async() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
-      declarations: [ MoviedetailComponent ],
+      declarations: [MoviedetailComponent],
       imports: [
         RouterTestingModule,
-        HttpClientTestingModule 
+        HttpClientTestingModule
       ],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -25,6 +25,6 @@ describe('MoviedetailComponent', () => {
   });
 
   it('should be created', () => {
-      expect(component).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 });

@@ -8,7 +8,7 @@ describe('GenresComponent', () => {
   let fixture: ComponentFixture<GenresComponent>;
 
   beforeEach(async () => {
-     TestBed.configureTestingModule({
+     await TestBed.configureTestingModule({
       declarations: [ GenresComponent ],
       imports: [
         RouterTestingModule,

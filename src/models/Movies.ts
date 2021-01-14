@@ -6,8 +6,6 @@ export interface MoviesResponse {
  total_results: number;
 }
 
-
-
 export interface Result {
   _id?: string;
   adult: boolean;

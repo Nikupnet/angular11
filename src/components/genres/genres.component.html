@@ -1,14 +1,15 @@
 <div class="app-component">
+  <div class="container">
+
     <div class="component-header">
       <h3>Genres</h3>
     </div>
 
-    {{genresResponse.genres.push()}}
     <div class="row">
-    <div *ngFor="let genre of genresResponse.genres; let i = index" class="col-sm-3 mb-4">
-          
-            <h5 class="card-title" (click)="gotoGenre(genre.id)">{{genre.name}}</h5>
-            <p class="card-text">{{genre.id}}</p>
+      <div *ngFor="let genre of genresResponse.genres; let i = index" class="col-sm-3 mb-4">
+        <button class="btn detailButton" (click)="gotoGenre(genre.id)">{{genre.name}}</button>
+      </div>
     </div>
-    </div>
+    
+  </div>
 </div>

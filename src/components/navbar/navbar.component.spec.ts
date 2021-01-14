@@ -1,15 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AllmoviesComponent } from './allmovies.component';
+
+import { NavbarComponent } from './navbar.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-describe('AllmoviesComponent', () => {
-  let component: AllmoviesComponent;
-  let fixture: ComponentFixture<AllmoviesComponent>;
+describe('NavbarComponent', () => {
+  let component: NavbarComponent;
+  let fixture: ComponentFixture<NavbarComponent>;
 
   beforeEach(async () => {
-    TestBed.configureTestingModule({
-      declarations: [AllmoviesComponent],
+    await TestBed.configureTestingModule({
+      declarations: [NavbarComponent],
       imports: [
         RouterTestingModule,
         HttpClientTestingModule
@@ -19,7 +20,7 @@ describe('AllmoviesComponent', () => {
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AllmoviesComponent);
+    fixture = TestBed.createComponent(NavbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark  fixed-top">
+  <div class="container">
+
+    <svg style="width: 20%; padding-right: 5em;" id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 73.4 26.71"><defs><style>.cls-1{font-size:33px;fill:#adada5;}.cls-1,.cls-2{font-family:Open Sans;font-weight:700;}.cls-2{font-size:14px;fill:#dbe120;}</style></defs><title>Unbenannt-1</title><text class="cls-1" transform="translate(25.89 25.08)">DB</text><text class="cls-2" transform="translate(0 17.61)">Movie</text></svg>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="home" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item">
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Filme
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a routerLink="/allmovies-component" class="dropdown-item" routerLinkActive="active">Alle Filme</a></li>
+            <li><a routerLink="/popmovies-component" class="dropdown-item" routerLinkActive="active">Populäre Filme</a>
+            </li>
+            <li><a routerLink="/releasemovies-component" class="dropdown-item" routerLinkActive="active">Aktuell im Kino</a>
+            </li>
+            <li><a routerLink="/bestmovies-component" class="dropdown-item" routerLinkActive="active">Bestbewerte Filme</a>
+            </li>
+            <li><a routerLink="/genres-component" class="dropdown-item" routerLinkActive="active">Genres</a></li>
+            <li><a routerLink="/favmovies-component" class="dropdown-item" routerLinkActive="active">Favoriten Filme</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <form class="d-flex">
+        <input class="form-control ml-2" #textbox type="text" required>
+        <button class="btn detailButton ml-3" routerLink="/searchmovies-component" routerLinkActive="active"
+          (click)="gotoSearch(textbox.value)">Suche</button>
+      </form>
+    </div>
+
+  </div>
+</nav>

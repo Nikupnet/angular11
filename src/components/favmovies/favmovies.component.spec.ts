@@ -9,13 +9,13 @@ describe('FavmoviesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FavmoviesComponent ],
+      declarations: [FavmoviesComponent],
       imports: [
         RouterTestingModule,
-        HttpClientTestingModule 
+        HttpClientTestingModule
       ],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -27,4 +27,5 @@ describe('FavmoviesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });

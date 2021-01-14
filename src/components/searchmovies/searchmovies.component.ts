@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {SearchMoviesResponse} from '../../models/SearchMovies';
-import {SearchMoviesService} from '../../services/searchmovies/searchmovies.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { MoviesResponse } from '../../models/Movies';
+import { SearchMoviesService } from '../../services/searchmovies/searchmovies.service';
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-searchmovies',
@@ -8,22 +9,24 @@ import {SearchMoviesService} from '../../services/searchmovies/searchmovies.serv
   styleUrls: ['./searchmovies.component.scss']
 })
 export class SearchmoviesComponent implements OnInit {
+  @Input() query = '';
 
-  constructor(private searchMoviesService: SearchMoviesService) { 
+  constructor(private searchMoviesService: SearchMoviesService, private route: ActivatedRoute) {
   }
- searchMoviesResponse: SearchMoviesResponse;
- posterpath = "https://image.tmdb.org/t/p/w500/";
+  searchMoviesResponse: MoviesResponse;
+  posterpath = "https://image.tmdb.org/t/p/w500/";
 
- log = '';
 
- logText(value: string): void {
-   this.log += `Text changed to '${value}'\n`;
- }
- ngOnInit(): void {
- }
+  ngOnInit(): void {
+    this.route
+      .queryParams
+      .subscribe(params => {
+        this.searchMovies(params["searchquery"])
+      })
+  }
 
- searchMovies(value: string): void {
-  this.searchMoviesService.getSearchMovies(this.log = value)
-       .subscribe((data: SearchMoviesResponse) => this.searchMoviesResponse = { ...data});
- }
+  searchMovies(value: string): void {
+    this.searchMoviesService.getSearchMovies(this.query = value)
+      .subscribe((data: MoviesResponse) => this.searchMoviesResponse = { ...data });
+  }
 }

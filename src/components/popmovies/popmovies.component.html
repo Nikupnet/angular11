@@ -1,20 +1,15 @@
 <div class="app-component">
-  <div class="component-header">
-    <h3>Populäre Filme</h3>
-  </div>
+  <div class="container">
 
+    <div class="component-header">
+      <h3>Populäre Filme</h3>
+    </div>
 
-  <div style="margin-top: 20px" *ngIf="moviesResponse">
-    {{moviesResponse.results.push()}}
-    {{moviesResponse.total_results}}
     <div class="row">
-
-      <div *ngFor="let movie of moviesResponse.results; let i = index" class="col-sm-3 mb-4">
+      <div *ngFor="let movie of moviesResponse.results; let i = index" class="col-lg-3 mb-4">
         <app-displaymovie [movie]="movie"></app-displaymovie>
       </div>
     </div>
+
   </div>
 </div>
-
-
-

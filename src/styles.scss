@@ -2,3 +2,47 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+$dark: #000;
+$gelb: #dffc02;
+$grey: #383835;
+$lightgrey: #acaca5;
+$red: #f44a16;
+$green: #30ad17;
+
+
+html, body { 
+    height: 100%;
+    background-color: $dark;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+ }
+body { margin: 0; }
+
+html {
+}
+h3 {
+    color: $gelb;
+    padding-bottom: 1em;
+    font-weight: 900;
+}
+h5 {
+    color: $gelb;
+
+}
+.card-body {
+    background-color: $grey;
+    color: $lightgrey;
+}
+
+
+.detailButton {
+    background-color: $dark;
+    color: $lightgrey;
+    border-radius: 0;
+
+    :hover > & {
+        color: $gelb;
+        border: $gelb 2px solid;
+    }
+}
+

@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
-import {MoviesResponse, Result} from '../../models/Movies';
-
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { MoviesResponse, Result } from '../../models/Movies';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +10,7 @@ export class FavMoviesService {
 
   constructor(private http: HttpClient) { }
 
-  isFavorite(movieId: number): Observable<boolean>{
+  isFavorite(movieId: number): Observable<boolean> {
     return this.http.get<boolean>(`http://localhost:3000/favorites/${movieId}`);
   }
 
@@ -27,6 +26,5 @@ export class FavMoviesService {
     const url = 'http://localhost:3000/favorite/' + movie.id;
     return this.http.delete(url);
   }
-
 
 }

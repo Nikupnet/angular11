@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { HttpClientModule } from '@angular/common/http'; 
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './components/app/app.component';
 import { AllmoviesComponent } from './components/allmovies/allmovies.component';
 import { PopmoviesComponent } from './components/popmovies/popmovies.component';
@@ -13,7 +14,7 @@ import { SearchmoviesComponent } from './components/searchmovies/searchmovies.co
 import { GenresComponent } from './components/genres/genres.component';
 import { DisplaymovieComponent } from './components/displaymovie/displaymovie.component';
 import { MoviedetailComponent } from './components/moviedetail/moviedetail.component';
-import { HttpClientModule } from '@angular/common/http'; 
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     SearchmoviesComponent,
     GenresComponent,
     DisplaymovieComponent,
-    MoviedetailComponent
+    MoviedetailComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

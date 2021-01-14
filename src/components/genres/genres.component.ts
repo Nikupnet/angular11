@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {GenresResponse} from '../../models/Genres';
-import {GenresService} from '../../services/genres/genres.service';
+import { GenresResponse } from '../../models/Genres';
+import { GenresService } from '../../services/genres/genres.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,20 +11,20 @@ import { Router } from '@angular/router';
 export class GenresComponent implements OnInit {
 
   constructor(private genresService: GenresService,
-        private router: Router) {
+    private router: Router) {
   }
 
   genresResponse: GenresResponse;
- posterpath = "https://image.tmdb.org/t/p/w500/";
+  posterpath = "https://image.tmdb.org/t/p/w500/";
 
- gotoGenre(genreid: number): void {
-  console.log("Click, ", genreid);
-  this.router.navigate(['/allmovies-component'], { queryParams: { genreid: genreid } });
- } 
+  gotoGenre(genreid: number): void {
+    console.log("Click, ", genreid);
+    this.router.navigate(['/allmovies-component'], { queryParams: { genreid: genreid } });
+  }
 
- ngOnInit(): void {
-   this.genresService.getGenres()
-     .subscribe((data: GenresResponse) => this.genresResponse = { ...data});
- }
+  ngOnInit(): void {
+    this.genresService.getGenres()
+      .subscribe((data: GenresResponse) => this.genresResponse = { ...data });
+  }
 
 }

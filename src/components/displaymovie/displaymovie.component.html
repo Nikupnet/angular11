@@ -1,13 +1,10 @@
-<div class="card">
-  <img [src]="posterpath + movie.poster_path" class="card-img-top" >
+<div class="card h-100">
+  <img [src]="posterpath + movie.poster_path" class="card-img-top">
   <div class="card-body">
     <h5 class="card-title">{{movie.title}}</h5>
     <p class="card-text"><i>{{movie.release_date | date :'dd. MMM yyyy'}}</i></p>
-    <p><button class="btn btn-primary" (click)="changeButton()">{{ displayButton }}</button></p>
-    <p><button class="btn btn-primary" (click)="goMovieDetail(movie.id)">{{ detailButton }}</button></p>
-    <p><button (click) ="addToFavorites()" class="btn btn-primary">{{ isFavorite ? 'Remove from favorite' : 'Add to favorite' }}</button></p>
+    <p><button class="btn detailButton" (click)="goMovieDetail(movie.id)">{{ detailButton }}</button></p>
+    <p><button (click)="addToFavorites()" class="btn {{ isFavorite ? 'removeButton' : 'favButton' }}">
+        {{ isFavorite ? 'Von Favoriten entfernen' : 'Zu Favoriten hinzufügen' }}</button></p>
   </div>
-</div>
-<div class="col-md-6" *ngIf="display">
-  <app-moviedetail></app-moviedetail>
 </div>

@@ -1,0 +1,34 @@
+@import '../../styles.scss';
+
+.nav-link, .navbar-dark,
+.dropdown-item {
+    color: $gelb;
+
+    :hover>& {
+        color: $red;
+    }
+
+    &:active {
+        background-color: $dark;
+    }
+
+    &:focus {
+        background: $lightgrey;
+    }
+}
+
+.nav-brand {
+    color: $gelb;
+}
+
+.dropdown-menu {
+    background-color: #343a40;
+}
+
+.dropdown-item.active {
+    background-color: $dark;
+}
+
+.form-control {
+    border-radius: 0;
+}

@@ -1,0 +1,25 @@
+@import '../../styles.scss';
+
+.favButton {
+    background-color: $dark;
+    color: $green;
+    border-radius: 0;
+    border: $dark 2px solid;
+
+    :hover>& {
+        color: $green;
+        border: $green 2px solid;
+    }
+}
+
+.removeButton {
+    background-color: $dark;
+    color: $red;
+    border-radius: 0;
+    border: $dark 2px solid;
+
+    :hover>& {
+        color: $red;
+        border: $red 2px solid;
+    }
+}
