@@ -17,7 +17,7 @@ export class AllmoviesComponent implements OnInit {
 
   moviesResponse: MoviesResponse;
   query = "top_rated";
-  page = 1;
+  page = 2;
 
 
   ngOnInit(): void {
